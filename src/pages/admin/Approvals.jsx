@@ -22,50 +22,52 @@ export default function Approvals() {
       </div>
 
       <div className="admin-table-card glass-card">
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Property</th>
-              <th>Submitted By</th>
-              <th>Date</th>
-              <th>Status</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {pendingApprovals.map(p => (
-              <tr key={p.id}>
-                <td>
-                  <div className="cell-main">
-                    <img src={p.images[0]} alt={p.title} />
-                    <div>
-                      <strong>{p.title}</strong>
-                      <span><MapPin size={10} /> {p.location}</span>
-                    </div>
-                  </div>
-                </td>
-                <td style={{ fontSize: 'var(--text-sm)' }}>{p.submittedBy}</td>
-                <td style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>{p.submittedDate}</td>
-                <td>
-                  <span className={`badge ${p.approvalStatus === 'Pending' ? 'badge-warning' : p.approvalStatus === 'Under Review' ? 'badge-info' : 'badge-danger'}`}>
-                    {p.approvalStatus}
-                  </span>
-                </td>
-                <td>
-                  <div style={{ display: 'flex', gap: '6px' }}>
-                    <button className="btn btn-primary btn-small" style={{ padding: '6px 12px' }}>
-                      <Check size={12} /> Approve
-                    </button>
-                    <button className="btn btn-secondary btn-small" style={{ padding: '6px 12px' }}>
-                      <Eye size={12} /> Review
-                    </button>
-                    <button className="doc-action-btn danger"><X size={14} /></button>
-                  </div>
-                </td>
+        <div className="table-responsive">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Property</th>
+                <th>Submitted By</th>
+                <th>Date</th>
+                <th>Status</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {pendingApprovals.map(p => (
+                <tr key={p.id}>
+                  <td>
+                    <div className="cell-main">
+                      <img src={p.images[0]} alt={p.title} />
+                      <div>
+                        <strong>{p.title}</strong>
+                        <span><MapPin size={10} /> {p.location}</span>
+                      </div>
+                    </div>
+                  </td>
+                  <td style={{ fontSize: 'var(--text-sm)' }}>{p.submittedBy}</td>
+                  <td style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>{p.submittedDate}</td>
+                  <td>
+                    <span className={`badge ${p.approvalStatus === 'Pending' ? 'badge-warning' : p.approvalStatus === 'Under Review' ? 'badge-info' : 'badge-danger'}`}>
+                      {p.approvalStatus}
+                    </span>
+                  </td>
+                  <td>
+                    <div style={{ display: 'flex', gap: '6px' }}>
+                      <button className="btn btn-primary btn-small" style={{ padding: '6px 12px' }}>
+                        <Check size={12} /> Approve
+                      </button>
+                      <button className="btn btn-secondary btn-small" style={{ padding: '6px 12px' }}>
+                        <Eye size={12} /> Review
+                      </button>
+                      <button className="doc-action-btn danger"><X size={14} /></button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

@@ -252,7 +252,7 @@
 }
 
 @media (max-width: 768px) {
-  .properties-grid.grid { grid-template-columns: 1fr; }
+  .properties-grid.grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
   .properties-grid.list .property-card { flex-direction: column; }
   .properties-grid.list .property-card-image { width: 100%; }
   .search-filter-bar { flex-wrap: wrap; }

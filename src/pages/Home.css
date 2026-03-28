@@ -418,14 +418,15 @@
   .section-header { flex-direction: column; align-items: flex-start; }
 }
 @media (max-width: 768px) {
-  .featured-grid { grid-template-columns: 1fr; }
-  .steps-grid { grid-template-columns: 1fr; }
+  .featured-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
   .stats-grid { grid-template-columns: repeat(2, 1fr); }
   .hero-title { font-size: var(--text-4xl); }
   .hero-subtitle { font-size: var(--text-base); }
   .hero-tags { flex-wrap: wrap; }
   .cta-buttons { flex-direction: column; }
   .city-panorama { max-height: 180px; }
-  .hs-stats-row { flex-direction: column; }
+  .hs-stats-row { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
+  .hs-stat-box { flex: 1; min-width: 130px; }
   .hero-buildings { display: none; }
 }

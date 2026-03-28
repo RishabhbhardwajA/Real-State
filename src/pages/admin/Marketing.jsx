@@ -40,51 +40,53 @@ export default function Marketing() {
 
       {/* Campaigns Table */}
       <div className="admin-table-card glass-card">
-        <table className="data-table">
-          <thead>
-            <tr>
-              <th>Campaign</th>
-              <th>Type</th>
-              <th>Status</th>
-              <th>Reach</th>
-              <th>Clicks</th>
-              <th>Conversions</th>
-              <th>Budget</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {campaigns.map(c => (
-              <tr key={c.id}>
-                <td>
-                  <div>
-                    <strong style={{ display: 'block', fontSize: 'var(--text-sm)' }}>{c.name}</strong>
-                    <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}><Calendar size={10} /> Started {c.startDate}</span>
-                  </div>
-                </td>
-                <td>
-                  <span className="badge badge-gold">
-                    {c.type === 'Email' ? <Mail size={10} /> : c.type === 'Social' ? <Share2 size={10} /> : <Megaphone size={10} />}
-                    {c.type}
-                  </span>
-                </td>
-                <td><span className={`badge ${statusColors[c.status]}`}>{c.status}</span></td>
-                <td style={{ fontSize: 'var(--text-sm)' }}>{c.sent > 0 ? c.sent.toLocaleString() : '—'}</td>
-                <td style={{ fontSize: 'var(--text-sm)' }}>{c.clicks > 0 ? c.clicks.toLocaleString() : '—'}</td>
-                <td style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--success)' }}>{c.conversions > 0 ? c.conversions : '—'}</td>
-                <td style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>{c.budget}</td>
-                <td>
-                  <div className="doc-actions">
-                    <button className="doc-action-btn">
-                      {c.status === 'Active' ? <Pause size={14} /> : <Play size={14} />}
-                    </button>
-                    <button className="doc-action-btn"><Eye size={14} /></button>
-                  </div>
-                </td>
+        <div className="table-responsive">
+          <table className="data-table">
+            <thead>
+              <tr>
+                <th>Campaign</th>
+                <th>Type</th>
+                <th>Status</th>
+                <th>Reach</th>
+                <th>Clicks</th>
+                <th>Conversions</th>
+                <th>Budget</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </table>
+            </thead>
+            <tbody>
+              {campaigns.map(c => (
+                <tr key={c.id}>
+                  <td>
+                    <div>
+                      <strong style={{ display: 'block', fontSize: 'var(--text-sm)' }}>{c.name}</strong>
+                      <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}><Calendar size={10} /> Started {c.startDate}</span>
+                    </div>
+                  </td>
+                  <td>
+                    <span className="badge badge-gold">
+                      {c.type === 'Email' ? <Mail size={10} /> : c.type === 'Social' ? <Share2 size={10} /> : <Megaphone size={10} />}
+                      {c.type}
+                    </span>
+                  </td>
+                  <td><span className={`badge ${statusColors[c.status]}`}>{c.status}</span></td>
+                  <td style={{ fontSize: 'var(--text-sm)' }}>{c.sent > 0 ? c.sent.toLocaleString() : '—'}</td>
+                  <td style={{ fontSize: 'var(--text-sm)' }}>{c.clicks > 0 ? c.clicks.toLocaleString() : '—'}</td>
+                  <td style={{ fontSize: 'var(--text-sm)', fontWeight: 600, color: 'var(--success)' }}>{c.conversions > 0 ? c.conversions : '—'}</td>
+                  <td style={{ fontSize: 'var(--text-sm)', fontWeight: 600 }}>{c.budget}</td>
+                  <td>
+                    <div className="doc-actions">
+                      <button className="doc-action-btn">
+                        {c.status === 'Active' ? <Pause size={14} /> : <Play size={14} />}
+                      </button>
+                      <button className="doc-action-btn"><Eye size={14} /></button>
+                    </div>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   )

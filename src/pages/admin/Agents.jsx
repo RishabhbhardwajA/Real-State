@@ -10,7 +10,7 @@ export default function Agents() {
         <button className="btn btn-primary btn-small"><Plus size={14} /> Add Agent</button>
       </div>
 
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(340px, 1fr))', gap: 'var(--space-md)' }}>
+      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 340px), 1fr))', gap: 'var(--space-md)' }}>
         {agentsData.map(agent => (
           <div key={agent.id} className="glass-card" style={{ padding: 'var(--space-xl)' }}>
             <div style={{ display: 'flex', gap: 'var(--space-md)', marginBottom: 'var(--space-lg)' }}>

@@ -129,6 +129,12 @@
 }
 
 /* Admin Data Table (reusable) */
+.table-responsive {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
 .data-table {
   width: 100%;
   border-collapse: collapse;
@@ -365,4 +371,7 @@
   .kpi-grid { grid-template-columns: 1fr; }
   .settings-grid { grid-template-columns: 1fr; }
   .settings-nav { flex-direction: row; overflow-x: auto; }
+  .settings-row { grid-template-columns: 1fr; }
+  .admin-section-header { flex-direction: column; align-items: flex-start; gap: var(--space-md); }
+  .admin-table-card { padding: var(--space-md); }
 }
