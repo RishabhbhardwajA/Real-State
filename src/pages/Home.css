@@ -125,15 +125,15 @@
 
 /* Sizes — BIGGER: small on left, tall on right */
 .hb-small {
-  width: 160px; height: auto;
+  width: clamp(100px, 12vw, 220px); height: auto;
   animation: buildFloat1 5s ease-in-out infinite;
 }
 .hb-medium {
-  width: 220px; height: auto;
+  width: clamp(140px, 16vw, 280px); height: auto;
   animation: buildFloat2 4.5s ease-in-out infinite 0.3s;
 }
 .hb-tall {
-  width: 320px; height: auto;
+  width: clamp(200px, 24vw, 420px); height: auto;
   animation: buildFloat3 5.5s ease-in-out infinite 0.6s;
 }
 
@@ -165,8 +165,9 @@
 }
 .city-panorama {
   width: 106%; display: block;
-  max-height: 280px; object-fit: cover; object-position: center top;
-  opacity: 0.3;
+  height: auto; min-height: 240px; max-height: 45vh;
+  object-fit: cover; object-position: center 15%;
+  opacity: 0.35;
   mask-image: linear-gradient(180deg, transparent 0%, black 25%, black 80%, transparent 100%);
   -webkit-mask-image: linear-gradient(180deg, transparent 0%, black 25%, black 80%, transparent 100%);
 }
@@ -392,11 +393,13 @@
 }
 .cta-buttons { display: flex; gap: var(--space-md); }
 .cta-right { position: relative; z-index: 1; }
-.cta-building {
-  width: 180px; height: auto;
-  animation: buildFloat3 5s ease-in-out infinite;
+.cta-buildings {
+  display: flex; align-items: flex-end; justify-content: flex-end; gap: 8px;
   filter: drop-shadow(0 10px 30px rgba(0,0,0,0.4));
 }
+.cta-b-small { width: 60px; height: auto; animation: buildFloat1 5s ease-in-out infinite; }
+.cta-b-medium { width: 90px; height: auto; animation: buildFloat2 4.5s ease-in-out infinite 0.3s; }
+.cta-b-tall { width: 140px; height: auto; animation: buildFloat3 5.5s ease-in-out infinite 0.6s; }
 
 
 /* ═══════════ RESPONSIVE ═══════════ */
@@ -404,7 +407,6 @@
   .hero-grid { grid-template-columns: 1fr; text-align: center; }
   .hero-text { max-width: 100%; align-items: center; padding-bottom: 200px; }
   .hero-buildings { position: absolute; bottom: 80px; right: 10%; opacity: 0.5; }
-  .hb-small { width: 60px; } .hb-medium { width: 85px; } .hb-tall { width: 120px; }
   .hero-search { max-width: 100%; }
   .hero-tags { justify-content: center; }
   .featured-grid { grid-template-columns: repeat(2, 1fr); }

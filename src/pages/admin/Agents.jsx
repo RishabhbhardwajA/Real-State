@@ -1,5 +1,6 @@
-import { Plus, Mail, Phone, Award, Star, TrendingUp, DollarSign } from 'lucide-react'
+import { Plus, Mail, Phone, Award, Star, TrendingUp, IndianRupee } from 'lucide-react'
 import agentsData from '../../data/agents.json'
+import formatINR from '../../utils/formatINR'
 import './Admin.css'
 
 export default function Agents() {
@@ -28,7 +29,7 @@ export default function Agents() {
                 <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Deals</div>
               </div>
               <div style={{ textAlign: 'center', padding: 'var(--space-sm)', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-md)' }}>
-                <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--success)' }}>${(agent.totalSales / 1000000).toFixed(0)}M</div>
+                <div style={{ fontSize: 'var(--text-lg)', fontWeight: 700, color: 'var(--success)' }}>{formatINR(agent.totalSales)}</div>
                 <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>Sales</div>
               </div>
               <div style={{ textAlign: 'center', padding: 'var(--space-sm)', background: 'var(--bg-elevated)', borderRadius: 'var(--radius-md)' }}>
@@ -44,7 +45,7 @@ export default function Agents() {
             </div>
 
             <div style={{ display: 'flex', gap: 'var(--space-sm)', fontSize: 'var(--text-xs)', color: 'var(--text-muted)', marginBottom: 'var(--space-md)' }}>
-              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><DollarSign size={10} /> Commission: ${(agent.commission / 1000000).toFixed(1)}M</span>
+              <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><IndianRupee size={10} /> Commission: {formatINR(agent.commission)}</span>
               <span style={{ display: 'flex', alignItems: 'center', gap: '4px' }}><Award size={10} /> {agent.certifications.join(', ')}</span>
             </div>
 

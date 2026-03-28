@@ -8,10 +8,10 @@ import './Properties.css'
 const propertyTypes = ['All', 'House', 'Apartment', 'Condo', 'Villa', 'Townhouse', 'Penthouse']
 const priceRanges = [
   { label: 'Any Price', min: 0, max: Infinity },
-  { label: 'Under $1M', min: 0, max: 1000000 },
-  { label: '$1M - $3M', min: 1000000, max: 3000000 },
-  { label: '$3M - $5M', min: 3000000, max: 5000000 },
-  { label: '$5M+', min: 5000000, max: Infinity },
+  { label: 'Under ₹5 Cr', min: 0, max: 50000000 },
+  { label: '₹5 Cr - ₹15 Cr', min: 50000000, max: 150000000 },
+  { label: '₹15 Cr - ₹30 Cr', min: 150000000, max: 300000000 },
+  { label: '₹30 Cr+', min: 300000000, max: Infinity },
 ]
 const bedOptions = ['Any', '1+', '2+', '3+', '4+', '5+']
 

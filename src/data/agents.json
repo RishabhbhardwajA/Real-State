@@ -1,97 +1,156 @@
 [
   {
     "id": 1,
-    "name": "Victoria Sterling",
-    "title": "Senior Luxury Specialist",
-    "email": "victoria@propease.com",
-    "phone": "+1 (212) 555-0101",
+    "name": "Rahul Sharma",
+    "title": "Senior Luxury Partner",
+    "email": "rahul.s@propease.in",
+    "phone": "+91 98765 43210",
     "photo": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400",
-    "specializations": ["Luxury Penthouses", "New Development", "Investment Properties"],
+    "specializations": [
+      "Luxury Penthouses",
+      "New Development",
+      "Investment Properties"
+    ],
     "experience": 12,
     "deals": 156,
     "rating": 4.9,
-    "totalSales": 125000000,
-    "commission": 2850000,
+    "totalSales": 10000000000,
+    "commission": 228000000,
     "activeListings": 8,
     "bio": "Victoria is one of New York's most sought-after luxury real estate specialists with over $125M in career sales. Her clientele includes Fortune 500 executives, international investors, and celebrity buyers.",
-    "certifications": ["CLHMS", "CRS", "GRI"],
-    "languages": ["English", "French", "Spanish"],
-    "region": "New York Metro"
+    "certifications": [
+      "CLHMS",
+      "CRS",
+      "GRI"
+    ],
+    "languages": [
+      "English",
+      "French",
+      "Spanish"
+    ],
+    "region": "Mumbai & West India"
   },
   {
     "id": 2,
-    "name": "Marcus Chen",
-    "title": "Waterfront Property Expert",
-    "email": "marcus@propease.com",
-    "phone": "+1 (310) 555-0202",
+    "name": "Priya Singh",
+    "title": "Coastal Estates Director",
+    "email": "priya.s@propease.in",
+    "phone": "+91 98765 43211",
     "photo": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400",
-    "specializations": ["Waterfront", "Beachfront Estates", "International Buyers"],
+    "specializations": [
+      "Waterfront",
+      "Beachfront Estates",
+      "International Buyers"
+    ],
     "experience": 15,
     "deals": 203,
     "rating": 4.95,
-    "totalSales": 210000000,
-    "commission": 4750000,
+    "totalSales": 16800000000,
+    "commission": 380000000,
     "activeListings": 12,
     "bio": "Marcus is a legendary waterfront property specialist with expertise spanning both coasts. His deep knowledge of coastal regulations, climate considerations, and luxury amenities makes him the go-to agent for beach and harbor properties.",
-    "certifications": ["CLHMS", "ABR", "CIPS"],
-    "languages": ["English", "Mandarin", "Cantonese"],
-    "region": "California & Florida"
+    "certifications": [
+      "CLHMS",
+      "ABR",
+      "CIPS"
+    ],
+    "languages": [
+      "English",
+      "Mandarin",
+      "Cantonese"
+    ],
+    "region": "Goa & South India"
   },
   {
     "id": 3,
-    "name": "Sarah Williams",
-    "title": "Urban Living Specialist",
-    "email": "sarah@propease.com",
-    "phone": "+1 (415) 555-0303",
+    "name": "Amit Patel",
+    "title": "Urban Tech Specialist",
+    "email": "amit.p@propease.in",
+    "phone": "+91 98765 43212",
     "photo": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400",
-    "specializations": ["Urban Lofts", "First-Time Buyers", "Tech Industry Relocations"],
+    "specializations": [
+      "Urban Lofts",
+      "First-Time Buyers",
+      "Tech Industry Relocations"
+    ],
     "experience": 8,
     "deals": 124,
     "rating": 4.85,
-    "totalSales": 68000000,
-    "commission": 1520000,
+    "totalSales": 5440000000,
+    "commission": 121600000,
     "activeListings": 6,
     "bio": "Sarah specializes in helping tech professionals and young families find their perfect urban home. Her deep understanding of neighborhood dynamics, school districts, and commute patterns sets her apart.",
-    "certifications": ["ABR", "SRS", "e-PRO"],
-    "languages": ["English", "Korean"],
-    "region": "San Francisco & New York"
+    "certifications": [
+      "ABR",
+      "SRS",
+      "e-PRO"
+    ],
+    "languages": [
+      "English",
+      "Korean"
+    ],
+    "region": "Bengaluru & Hyderabad"
   },
   {
     "id": 4,
-    "name": "James Rodriguez",
-    "title": "Estate & Ranch Specialist",
-    "email": "james@propease.com",
-    "phone": "+1 (303) 555-0404",
+    "name": "Neha Gupta",
+    "title": "Heritage Property Expert",
+    "email": "neha.g@propease.in",
+    "phone": "+91 98765 43213",
     "photo": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400",
-    "specializations": ["Mountain Properties", "Ranches", "Historic Homes"],
+    "specializations": [
+      "Mountain Properties",
+      "Ranches",
+      "Historic Homes"
+    ],
     "experience": 18,
     "deals": 178,
     "rating": 4.88,
-    "totalSales": 145000000,
-    "commission": 3200000,
+    "totalSales": 11600000000,
+    "commission": 256000000,
     "activeListings": 9,
     "bio": "With nearly two decades of experience in mountain and estate properties, James brings unparalleled expertise in luxury retreats, historic restorations, and ranch acquisitions across the Mountain West region.",
-    "certifications": ["CLHMS", "CRS", "ALC"],
-    "languages": ["English", "Spanish", "Portuguese"],
-    "region": "Colorado & Southwest"
+    "certifications": [
+      "CLHMS",
+      "CRS",
+      "ALC"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Portuguese"
+    ],
+    "region": "Delhi NCR & North India"
   },
   {
     "id": 5,
-    "name": "Elena Vasquez",
-    "title": "Commercial & Mixed-Use Expert",
-    "email": "elena@propease.com",
-    "phone": "+1 (786) 555-0505",
+    "name": "Vikram Desai",
+    "title": "Commercial Property Expert",
+    "email": "vikram.d@propease.in",
+    "phone": "+91 98765 43214",
     "photo": "https://images.unsplash.com/photo-1594744803329-e58b31de8bf5?w=400",
-    "specializations": ["Commercial", "Mixed-Use", "Property Development"],
+    "specializations": [
+      "Commercial",
+      "Mixed-Use",
+      "Property Development"
+    ],
     "experience": 10,
     "deals": 89,
     "rating": 4.82,
-    "totalSales": 95000000,
-    "commission": 2100000,
+    "totalSales": 7600000000,
+    "commission": 168000000,
     "activeListings": 5,
     "bio": "Elena bridges the gap between residential luxury and commercial development. Her background in architecture and urban planning gives clients a unique perspective on property potential and investment value.",
-    "certifications": ["CCIM", "SIOR", "CRS"],
-    "languages": ["English", "Spanish", "Italian"],
-    "region": "Florida & Southeast"
+    "certifications": [
+      "CCIM",
+      "SIOR",
+      "CRS"
+    ],
+    "languages": [
+      "English",
+      "Spanish",
+      "Italian"
+    ],
+    "region": "Pune & Central India"
   }
 ]

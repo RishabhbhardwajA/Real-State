@@ -1,15 +1,16 @@
-import { Building2, Users, DollarSign, TrendingUp, ArrowUpRight, ArrowDownRight, Eye, Clock, Target, Layers } from 'lucide-react'
+import { Building2, Users, IndianRupee, TrendingUp, ArrowUpRight, ArrowDownRight, Eye, Clock, Target, Layers } from 'lucide-react'
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend, Filler } from 'chart.js'
 import { Bar, Line } from 'react-chartjs-2'
 import properties from '../../data/properties.json'
 import leads from '../../data/leads.json'
 import agents from '../../data/agents.json'
+import formatINR from '../../utils/formatINR'
 import './Admin.css'
 
 ChartJS.register(CategoryScale, LinearScale, BarElement, LineElement, PointElement, Title, Tooltip, Legend, Filler)
 
 const kpis = [
-  { label: 'Total Revenue', value: '$4.2M', change: '+12.5%', up: true, icon: DollarSign },
+  { label: 'Total Revenue', value: '₹350 Cr', change: '+12.5%', up: true, icon: IndianRupee },
   { label: 'Active Listings', value: properties.length.toString(), change: '+3', up: true, icon: Building2 },
   { label: 'Total Leads', value: leads.length.toString(), change: '+8', up: true, icon: Users },
   { label: 'Conversion Rate', value: '24%', change: '-2.1%', up: false, icon: Target },
@@ -117,7 +118,7 @@ export default function AdminDashboard() {
                 <img src={agent.photo} alt={agent.name} className="agent-table-photo" />
                 <div className="lead-info">
                   <strong>{agent.name}</strong>
-                  <span>{agent.deals} deals · ${(agent.totalSales / 1000000).toFixed(0)}M sales</span>
+                  <span>{agent.deals} deals · {formatINR(agent.totalSales)} sales</span>
                 </div>
                 <span className="agent-rating">⭐ {agent.rating}</span>
               </div>

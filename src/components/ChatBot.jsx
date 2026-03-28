@@ -6,7 +6,7 @@ const botResponses = [
   "I'd be happy to help you find your dream property! What's your budget range and preferred location?",
   "Great choice! That area has seen 12% appreciation in the last year. Would you like me to show you some listings?",
   "I can schedule a virtual tour for you. Our agents are available Monday through Saturday. What time works best?",
-  "Based on your preferences, I recommend checking out our Oceanfront Villa Serenity in Malibu — it matches all your criteria!",
+  "Based on your preferences, I recommend checking out our Oceanfront Villa Serenity in Goa — it matches all your criteria!",
   "The EMI calculator on our platform can help you estimate monthly payments. Would you like me to guide you there?",
   "Our trust score system rates agents based on client reviews, transaction history, and response time. All our agents score above 85!",
   "I can help you compare up to 3 properties side by side. Just save your favorites and use the compare feature!",

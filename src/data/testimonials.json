@@ -1,8 +1,8 @@
 [
   {
     "id": 1,
-    "name": "Jonathan & Michelle Harper",
-    "role": "Homeowners — Manhattan Penthouse",
+    "name": "Rajiv Mehta",
+    "role": "CEO, TechCorp India",
     "avatar": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200",
     "rating": 5,
     "text": "PropEase transformed our home search from overwhelming to effortless. The 3D city navigation let us explore neighborhoods virtually before committing to visits. We found our dream penthouse in half the time we expected.",
@@ -11,8 +11,8 @@
   },
   {
     "id": 2,
-    "name": "Sarah Kim",
-    "role": "Investor — Multi-Property Portfolio",
+    "name": "Ananya Desai",
+    "role": "Startup Founder",
     "avatar": "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=200",
     "rating": 5,
     "text": "As a real estate investor, I need data-driven insights. PropEase's ROI calculator and demand heatmaps gave me the confidence to make smart investment decisions. I've purchased three properties through the platform and each has exceeded projected returns.",
@@ -21,8 +21,8 @@
   },
   {
     "id": 3,
-    "name": "David & Priya Patel",
-    "role": "First-Time Buyers — Austin Townhome",
+    "name": "Siddharth Jain",
+    "role": "Venture Capitalist",
     "avatar": "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=200",
     "rating": 5,
     "text": "As first-time buyers, the process felt daunting until we found PropEase. The EMI calculator helped us understand what we could afford, and the AI chatbot answered our questions 24/7. Our agent Sarah was incredible — she found us the perfect home!",
@@ -31,8 +31,8 @@
   },
   {
     "id": 4,
-    "name": "Elizabeth Monroe",
-    "role": "Agency Owner — Monroe Realty Group",
+    "name": "Kareena Kapoor",
+    "role": "Actor & Investor",
     "avatar": "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=200",
     "rating": 5,
     "text": "PropEase isn't just a listing platform — it's a complete business solution. The CRM, lead pipeline, and marketing tools have increased our team's productivity by 40%. The admin dashboard gives me real-time insights into every aspect of my business.",
@@ -41,8 +41,8 @@
   },
   {
     "id": 5,
-    "name": "Richard & Amy Chen",
-    "role": "Homeowners — Malibu Villa",
+    "name": "Vivek Oberoi",
+    "role": "Real Estate Tycoon",
     "avatar": "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=200",
     "rating": 5,
     "text": "The virtual tour and image gallery features sold us before we even visited in person. When we arrived at the Oceanfront Villa, it was exactly as promised. The document verification process made closing seamless and stress-free.",

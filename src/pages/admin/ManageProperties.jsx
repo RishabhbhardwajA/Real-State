@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Plus, Search, Edit, Trash2, Eye, MapPin } from 'lucide-react'
 import properties from '../../data/properties.json'
+import formatINR from '../../utils/formatINR'
 import './Admin.css'
 
 export default function ManageProperties() {
@@ -53,7 +54,7 @@ export default function ManageProperties() {
                   </td>
                   <td>{p.type}</td>
                   <td><span className={`badge ${p.status === 'For Sale' ? 'badge-gold' : 'badge-info'}`}>{p.status}</span></td>
-                  <td style={{ fontWeight: 600 }}>${p.price >= 1000000 ? `${(p.price / 1000000).toFixed(1)}M` : p.price.toLocaleString()}</td>
+                  <td style={{ fontWeight: 600 }}>{formatINR(p.price, p.status === 'For Rent')}</td>
                   <td>{p.agent}</td>
                   <td>
                     <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>

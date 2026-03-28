@@ -163,7 +163,7 @@ export default function Settings() {
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
                   <div>
                     <span className="badge badge-gold" style={{ marginBottom: '8px', display: 'inline-block' }}>Enterprise Plan</span>
-                    <div style={{ fontSize: 'var(--text-2xl)', fontFamily: 'var(--font-display)', fontWeight: 700 }}>$279<span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', fontFamily: 'var(--font-body)', fontWeight: 400 }}>/month</span></div>
+                    <div style={{ fontSize: 'var(--text-2xl)', fontFamily: 'var(--font-display)', fontWeight: 700 }}>₹27,999<span style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)', fontFamily: 'var(--font-body)', fontWeight: 400 }}>/month</span></div>
                     <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>Billed annually · Next billing: Apr 1, 2026</span>
                   </div>
                   <button className="btn btn-secondary btn-small">Change Plan</button>

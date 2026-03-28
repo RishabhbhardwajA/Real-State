@@ -7,7 +7,7 @@ const plans = [
   {
     name: 'Starter',
     icon: Building2,
-    price: { monthly: 49, annual: 39 },
+    price: { monthly: '4,999', annual: '3,999' },
     desc: 'Perfect for individual agents getting started.',
     features: [
       { text: 'Up to 25 listings', included: true },
@@ -25,7 +25,7 @@ const plans = [
   {
     name: 'Professional',
     icon: Zap,
-    price: { monthly: 129, annual: 99 },
+    price: { monthly: '12,999', annual: '9,999' },
     desc: 'For growing teams with advanced needs.',
     features: [
       { text: 'Up to 200 listings', included: true },
@@ -43,7 +43,7 @@ const plans = [
   {
     name: 'Enterprise',
     icon: Crown,
-    price: { monthly: 349, annual: 279 },
+    price: { monthly: '34,999', annual: '27,999' },
     desc: 'Full-featured for large agencies & brokerages.',
     features: [
       { text: 'Unlimited listings', included: true },
@@ -94,7 +94,7 @@ export default function Pricing() {
                 <p>{plan.desc}</p>
               </div>
               <div className="pricing-price">
-                <span className="price-amount">${annual ? plan.price.annual : plan.price.monthly}</span>
+                <span className="price-amount">₹{annual ? plan.price.annual : plan.price.monthly}</span>
                 <span className="price-period">/month</span>
               </div>
               <ul className="pricing-features">

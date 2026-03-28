@@ -8,6 +8,7 @@ import {
 import PropertyCard from '../components/PropertyCard'
 import properties from '../data/properties.json'
 import agents from '../data/agents.json'
+import formatINR from '../utils/formatINR'
 import './PropertyDetail.css'
 
 export default function PropertyDetail() {
@@ -28,10 +29,7 @@ export default function PropertyDetail() {
   const agent = agents.find(a => a.id === property.agentId) || agents[0]
   const similar = properties.filter(p => p.id !== property.id && (p.type === property.type || p.city === property.city)).slice(0, 3)
 
-  const formatPrice = (price) => {
-    if (property.status === 'For Rent') return `$${price.toLocaleString()}/mo`
-    return price >= 1000000 ? `$${(price / 1000000).toFixed(1)}M` : `$${price.toLocaleString()}`
-  }
+  const formatPrice = (price) => formatINR(price, property.status === 'For Rent')
 
   const futureValue = property.price * Math.pow(1 + (property.roi || 10) / 100, roiYears)
 
@@ -90,7 +88,7 @@ export default function PropertyDetail() {
               <div className="detail-location"><MapPin size={16} /> {property.address}, {property.location}</div>
               <div className="detail-price-row">
                 <span className="detail-price">{formatPrice(property.price)}</span>
-                {property.pricePerSqft && <span className="detail-price-sqft">${property.pricePerSqft}/sqft</span>}
+                {property.pricePerSqft && <span className="detail-price-sqft">₹{property.pricePerSqft.toLocaleString('en-IN')}/sqft</span>}
                 <div className="detail-actions">
                   <button className={`action-btn ${liked ? 'liked' : ''}`} onClick={() => setLiked(!liked)}>
                     <Heart size={18} fill={liked ? 'var(--danger)' : 'none'} />
@@ -141,7 +139,7 @@ export default function PropertyDetail() {
                   <div className="roi-results">
                     <div className="roi-result-item">
                       <span className="roi-label">Current Value</span>
-                      <span className="roi-value">${property.price.toLocaleString()}</span>
+                      <span className="roi-value">{formatINR(property.price)}</span>
                     </div>
                     <div className="roi-result-item">
                       <span className="roi-label">Annual Growth</span>
@@ -149,12 +147,12 @@ export default function PropertyDetail() {
                     </div>
                     <div className="roi-result-item">
                       <span className="roi-label">Projected Value ({roiYears}yr)</span>
-                      <span className="roi-value">${Math.round(futureValue).toLocaleString()}</span>
+                      <span className="roi-value">{formatINR(Math.round(futureValue))}</span>
                     </div>
                     <div className="roi-result-item highlight">
                       <span className="roi-label">Total Gain</span>
                       <span className="roi-value" style={{ color: 'var(--success)' }}>
-                        <TrendingUp size={14} /> +${Math.round(futureValue - property.price).toLocaleString()}
+                        <TrendingUp size={14} /> +{formatINR(Math.round(futureValue - property.price))}
                       </span>
                     </div>
                   </div>

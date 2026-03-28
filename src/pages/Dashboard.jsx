@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Building2, Heart, Calendar, FileText, TrendingUp, Bell, Eye, MapPin, ArrowRight, Clock, Star } from 'lucide-react'
 import properties from '../data/properties.json'
+import formatINR from '../utils/formatINR'
 import './Dashboard.css'
 
 const savedProperties = properties.slice(0, 3)
@@ -8,7 +9,7 @@ const recentViews = properties.slice(3, 6)
 
 const notifications = [
   { id: 1, text: 'Your tour for "The Ivory Grand Penthouse" has been confirmed for March 30.', time: '2 hours ago', type: 'success' },
-  { id: 2, text: 'New price drop on "Oceanfront Villa Serenity" — now $8.5M.', time: '5 hours ago', type: 'info' },
+  { id: 2, text: 'New price drop on "Oceanfront Villa Serenity" — now ₹70 Cr.', time: '5 hours ago', type: 'info' },
   { id: 3, text: 'Document verification is pending for your recent application.', time: '1 day ago', type: 'warning' },
 ]
 
@@ -88,7 +89,7 @@ export default function Dashboard() {
                     <div className="dash-property-info">
                       <strong>{p.title}</strong>
                       <span><MapPin size={10} /> {p.location}</span>
-                      <span className="dash-property-price">${p.price >= 1000000 ? `${(p.price / 1000000).toFixed(1)}M` : `${p.price.toLocaleString()}/mo`}</span>
+                      <span className="dash-property-price">{formatINR(p.price, p.status === 'For Rent')}</span>
                     </div>
                     {p.trustScore && <div className="dash-trust"><Star size={10} fill="var(--gold)" color="var(--gold)" /> {p.trustScore}</div>}
                   </Link>

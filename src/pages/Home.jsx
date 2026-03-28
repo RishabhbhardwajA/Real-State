@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { Link } from 'react-router-dom'
 import {
   Search, ArrowRight, Building2, Users, TrendingUp, Shield,
@@ -18,7 +18,7 @@ import './Home.css'
 const stats = [
   { icon: Building2, value: '2,500+', label: 'Premium Listings' },
   { icon: Users, value: '15,000+', label: 'Happy Clients' },
-  { icon: TrendingUp, value: '$2.1B', label: 'In Transactions' },
+  { icon: TrendingUp, value: '₹15,000+ Cr', label: 'In Transactions' },
   { icon: Globe, value: '45+', label: 'Cities Covered' },
 ]
 
@@ -27,6 +27,19 @@ export default function HomePage() {
   const [currentTestimonial, setCurrentTestimonial] = useState(0)
   const [scrollY, setScrollY] = useState(0)
   const featured = properties.filter(p => p.featured).slice(0, 4)
+
+  const starsArray = useMemo(() => Array.from({ length: 60 }).map(() => ({
+    left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`,
+    animationDelay: `${Math.random() * 5}s`,
+    animationDuration: `${2 + Math.random() * 3}s`,
+    width: `${1 + Math.random() * 2}px`, height: `${1 + Math.random() * 2}px`,
+  })), [])
+
+  const particlesArray = useMemo(() => Array.from({ length: 12 }).map((_, i) => ({
+    left: `${5 + Math.random() * 90}%`,
+    animationDelay: `${i * 0.4}s`,
+    animationDuration: `${5 + Math.random() * 5}s`,
+  })), [])
 
   useEffect(() => {
     const onScroll = () => setScrollY(window.scrollY)
@@ -48,23 +61,14 @@ export default function HomePage() {
       <section className="hero" id="hero-section">
         {/* Stars */}
         <div className="hero-stars">
-          {Array.from({ length: 60 }).map((_, i) => (
-            <div key={i} className="star" style={{
-              left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%`,
-              animationDelay: `${Math.random() * 5}s`,
-              animationDuration: `${2 + Math.random() * 3}s`,
-              width: `${1 + Math.random() * 2}px`, height: `${1 + Math.random() * 2}px`,
-            }} />
+          {starsArray.map((style, i) => (
+            <div key={i} className="star" style={style} />
           ))}
         </div>
         {/* Gold particles */}
-        <div className="hero-particles">
-          {Array.from({ length: 12 }).map((_, i) => (
-            <div key={i} className="gold-particle" style={{
-              left: `${5 + Math.random() * 90}%`,
-              animationDelay: `${i * 0.4}s`,
-              animationDuration: `${5 + Math.random() * 5}s`,
-            }} />
+        <div className="hero-particles" style={{ transform: `translateY(${scrollY * 0.4}px)` }}>
+          {particlesArray.map((style, i) => (
+            <div key={i} className="gold-particle" style={style} />
           ))}
         </div>
 
@@ -93,19 +97,13 @@ export default function HomePage() {
             </div>
             <div className="hero-tags">
               <span>Popular:</span>
-              {['Manhattan Penthouse', 'Malibu Villa', 'Miami Waterfront'].map(tag => (
+              {['Mumbai Penthouse', 'Goa Villa', 'Delhi Bungalow'].map(tag => (
                 <Link key={tag} to={`/properties?q=${tag}`} className="hero-tag">{tag}</Link>
               ))}
             </div>
           </div>
 
-          {/* Right: 3 Buildings — small, medium, tall (left to right) */}
-          <div className="hero-buildings" style={{ transform: `translateY(${scrollY * -0.04}px)` }}>
-            <img src={buildingSmall} alt="Small Building" className="hb hb-small" />
-            <img src={buildingMed} alt="Medium Building" className="hb hb-medium" />
-            <img src={buildingTall} alt="Tall Building" className="hb hb-tall" />
-            <div className="hb-ground-glow" />
-          </div>
+
         </div>
 
         {/* City panorama + cars */}
@@ -281,7 +279,11 @@ export default function HomePage() {
                 </div>
               </div>
               <div className="cta-right">
-                <img src={buildingTall} alt="3D Building" className="cta-building" />
+                <div className="cta-buildings">
+                  <img src={buildingSmall} alt="Small Building" className="cta-b-small" />
+                  <img src={buildingMed} alt="Medium Building" className="cta-b-medium" />
+                  <img src={buildingTall} alt="Tall Building" className="cta-b-tall" />
+                </div>
               </div>
             </div>
           </ScrollReveal>

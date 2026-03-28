@@ -1,16 +1,13 @@
 import { Link } from 'react-router-dom'
 import { MapPin, Bed, Bath, Square, TrendingUp, Star, Heart } from 'lucide-react'
 import { useState } from 'react'
+import formatINR from '../utils/formatINR'
 import './PropertyCard.css'
 
 export default function PropertyCard({ property, style }) {
   const [liked, setLiked] = useState(false)
 
-  const formatPrice = (price) => {
-    if (property.status === 'For Rent') return `$${price.toLocaleString()}/mo`
-    if (price >= 1000000) return `$${(price / 1000000).toFixed(1)}M`
-    return `$${price.toLocaleString()}`
-  }
+  const formatPrice = (price) => formatINR(price, property.status === 'For Rent')
 
   return (
     <Link to={`/property/${property.id}`} className="property-card glass-card" style={style} id={`property-card-${property.id}`}>

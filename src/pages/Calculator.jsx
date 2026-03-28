@@ -1,14 +1,16 @@
 import { useState, useMemo } from 'react'
-import { Calculator as CalcIcon, DollarSign, Percent, Clock, TrendingDown, PieChart, ArrowRight } from 'lucide-react'
+import { Calculator as CalcIcon, IndianRupee, Percent, Clock, TrendingDown, PieChart, ArrowRight } from 'lucide-react'
 import { Chart as ChartJS, ArcElement, Tooltip as ChartTooltip, Legend } from 'chart.js'
 import { Doughnut } from 'react-chartjs-2'
 import './Calculator.css'
 
 ChartJS.register(ArcElement, ChartTooltip, Legend)
 
+import formatINR from '../utils/formatINR'
+
 export default function Calculator() {
-  const [loanAmount, setLoanAmount] = useState(500000)
-  const [interestRate, setInterestRate] = useState(6.5)
+  const [loanAmount, setLoanAmount] = useState(50000000)
+  const [interestRate, setInterestRate] = useState(8.5)
   const [loanTerm, setLoanTerm] = useState(30)
   const [downPayment, setDownPayment] = useState(20)
 
@@ -63,18 +65,18 @@ export default function Calculator() {
 
             <div className="calc-slider-group">
               <div className="slider-header">
-                <label><DollarSign size={14} /> Property Value</label>
-                <span className="slider-value">${loanAmount.toLocaleString()}</span>
+                <label><IndianRupee size={14} /> Property Value</label>
+                <span className="slider-value">{formatINR(loanAmount)}</span>
               </div>
-              <input type="range" min="100000" max="10000000" step="50000" value={loanAmount}
+              <input type="range" min="5000000" max="500000000" step="1000000" value={loanAmount}
                 onChange={e => setLoanAmount(parseInt(e.target.value))} className="calc-slider" />
-              <div className="slider-range"><span>$100K</span><span>$10M</span></div>
+              <div className="slider-range"><span>₹50 L</span><span>₹50 Cr</span></div>
             </div>
 
             <div className="calc-slider-group">
               <div className="slider-header">
                 <label><Percent size={14} /> Down Payment</label>
-                <span className="slider-value">{downPayment}% (${(loanAmount * downPayment / 100).toLocaleString()})</span>
+                <span className="slider-value">{downPayment}% ({formatINR(loanAmount * downPayment / 100)})</span>
               </div>
               <input type="range" min="5" max="50" step="5" value={downPayment}
                 onChange={e => setDownPayment(parseInt(e.target.value))} className="calc-slider" />
@@ -105,7 +107,7 @@ export default function Calculator() {
           <div className="calc-results">
             <div className="emi-display glass-card">
               <span className="emi-label">Monthly EMI</span>
-              <span className="emi-amount">${Math.round(calc.monthlyPayment).toLocaleString()}</span>
+              <span className="emi-amount">{formatINR(Math.round(calc.monthlyPayment))}</span>
               <span className="emi-sublabel">per month for {loanTerm} years</span>
             </div>
 
@@ -119,19 +121,19 @@ export default function Calculator() {
             <div className="calc-summary glass-card">
               <div className="summary-row">
                 <span>Loan Amount</span>
-                <strong>${Math.round(calc.principal).toLocaleString()}</strong>
+                <strong>{formatINR(Math.round(calc.principal))}</strong>
               </div>
               <div className="summary-row">
                 <span>Down Payment</span>
-                <strong style={{ color: 'var(--success)' }}>${Math.round(calc.downPaymentAmount).toLocaleString()}</strong>
+                <strong style={{ color: 'var(--success)' }}>{formatINR(Math.round(calc.downPaymentAmount))}</strong>
               </div>
               <div className="summary-row">
                 <span>Total Interest</span>
-                <strong style={{ color: 'var(--info)' }}>${Math.round(calc.totalInterest).toLocaleString()}</strong>
+                <strong style={{ color: 'var(--info)' }}>{formatINR(Math.round(calc.totalInterest))}</strong>
               </div>
               <div className="summary-row total">
                 <span>Total Payment</span>
-                <strong>${Math.round(calc.totalPayment).toLocaleString()}</strong>
+                <strong>{formatINR(Math.round(calc.totalPayment))}</strong>
               </div>
             </div>
           </div>

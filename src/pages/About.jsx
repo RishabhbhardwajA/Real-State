@@ -29,9 +29,9 @@ export default function About() {
             <div className="about-mission-content">
               <h2>Our <span className="gold-text">Mission</span></h2>
               <p>We believe everyone deserves a world-class real estate experience. By combining artificial intelligence with deep market expertise, we've created a platform that empowers buyers, sellers, and agents alike.</p>
-              <p>Since our founding, we've facilitated over $2.1 billion in transactions across 45+ cities, helping more than 15,000 clients find their perfect property.</p>
+              <p>Since our founding, we've facilitated over ₹15,000 Crores in transactions across 45+ cities, helping more than 15,000 clients find their perfect property.</p>
               <div className="mission-stats">
-                <div><strong>$2.1B+</strong><span>Total Transactions</span></div>
+                <div><strong>₹15K+ Cr</strong><span>Total Transactions</span></div>
                 <div><strong>15K+</strong><span>Happy Clients</span></div>
                 <div><strong>45+</strong><span>Cities</span></div>
               </div>
