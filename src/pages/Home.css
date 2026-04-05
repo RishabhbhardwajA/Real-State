@@ -225,9 +225,11 @@
   background: var(--bg-secondary);
   border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
   padding: var(--space-2xl) 0;
+  overflow: hidden;
 }
 .stats-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--space-xl); }
-.stat-item { display: flex; align-items: center; gap: var(--space-md); }
+.stat-item { display: flex; align-items: center; gap: var(--space-md); min-width: 0; }
+.stat-item > div { min-width: 0; }
 .stat-icon-wrap {
   width: 52px; height: 52px; border-radius: var(--radius-md);
   background: var(--gold-subtle); border: 1px solid var(--border-gold);
@@ -235,6 +237,7 @@
   flex-shrink: 0;
 }
 .stat-label { font-size: var(--text-sm); color: var(--text-muted); }
+.stat-number { white-space: nowrap; }
 
 
 /* ═══════════ SECTIONS ═══════════ */
@@ -422,7 +425,11 @@
 @media (max-width: 768px) {
   .featured-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
   .steps-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
-  .stats-grid { grid-template-columns: repeat(2, 1fr); }
+  .stats-grid { grid-template-columns: repeat(2, 1fr); gap: var(--space-md); }
+  .stat-number { font-size: var(--text-2xl) !important; }
+  .stat-icon-wrap { width: 40px; height: 40px; }
+  .stat-label { font-size: var(--text-xs); }
+  .stat-item { gap: var(--space-sm); }
   .hero-title { font-size: var(--text-4xl); }
   .hero-subtitle { font-size: var(--text-base); }
   .hero-tags { flex-wrap: wrap; }
@@ -431,4 +438,13 @@
   .hs-stats-row { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: var(--space-sm); }
   .hs-stat-box { flex: 1; min-width: 130px; }
   .hero-buildings { display: none; }
+}
+@media (max-width: 480px) {
+  .stats-grid { grid-template-columns: 1fr 1fr; gap: var(--space-sm) var(--space-md); }
+  .stat-number { font-size: var(--text-xl) !important; }
+  .stat-icon-wrap { width: 36px; height: 36px; }
+  .stat-label { font-size: 11px; }
+  .featured-grid { grid-template-columns: 1fr; }
+  .steps-grid { grid-template-columns: 1fr; }
+  .hero-title { font-size: var(--text-3xl); }
 }
